@@ -1,0 +1,22 @@
+#+title: Nyxt configuration
+#+author: Giovanni Crisalfi
+#+hugo_base_dir: ~/zwitterio-it/
+#+hugo_section: nyxt-config
+#+STARTUP: show2levels
+#+MACRO: more @@html:<!-- more -->@@
+
+# * Why Nyxt?
+# Perché Nyxt (intro)
+
+* Init
+# #+name: init
+#+begin_src lisp :tangle ~/.config/nyxt/init.lisp
+(in-package :nyxt)
+
+;; Set vi mode as default
+;; you can set `emacs-mode` and `CUA-mode` too
+(define-configuration (buffer web-buffer prompt-buffer)
+  ((default-modes (append '(vi-normal-mode) %slot-default%))))
+
+(echo "Init file successfully loaded!")
+#+end_src
